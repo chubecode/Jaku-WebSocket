@@ -30,20 +30,20 @@ Sample code:
 
 ##### Query the state of the current audio on a device
 
-WebSocketConnection conn = new WebSocketConnection(ROKU_DEVICE_IP_ADDRESS);
-conn.openConnection();
+    WebSocketConnection conn = new WebSocketConnection(ROKU_DEVICE_IP_ADDRESS);
+    conn.openConnection();
 
-QueryAudioDeviceRequest request = new QueryAudioDeviceRequest();
-JakuWebSocketResponse response = conn.send(new JakuWebSocketRequest(request, AudioDevice.class));
-AudioDevice audioDevice = (com.jaku.websocket.model.AudioDevice) response.getResponseData();
+    QueryAudioDeviceRequest request = new QueryAudioDeviceRequest();
+    JakuWebSocketResponse response = conn.send(new JakuWebSocketRequest(request, AudioDevice.class));
+    AudioDevice audioDevice = (com.jaku.websocket.model.AudioDevice) response.getResponseData();
 
 ##### Set the audio output on a device
 
-WebSocketConnection conn = new WebSocketConnection(ROKU_DEVICE_IP_ADDRESS);
-conn.openConnection();
+    WebSocketConnection conn = new WebSocketConnection(ROKU_DEVICE_IP_ADDRESS);
+    conn.openConnection();
 
-SetAudioOutputRequest request = new SetAudioOutputRequest(ROKU_DEVICE_HOSTNAME + ":6970:97:960:0:10");
-conn.send(new JakuWebSocketRequest(request, null));
+    SetAudioOutputRequest request = new SetAudioOutputRequest(ROKU_DEVICE_HOSTNAME + ":6970:97:960:0:10");
+    conn.send(new JakuWebSocketRequest(request, null));
 
 License
 ------------
